@@ -35,6 +35,12 @@
       "username": "Ivanov",
       "password": "Test123!",
       "role": "user"
+    },
+    {
+      "id": 1746293915769,
+      "username": "UserTest_2",
+      "password": "!234Qwer",
+      "role": "user"
     }
   ],
   "tasks": [
