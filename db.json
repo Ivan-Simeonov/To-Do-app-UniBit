@@ -9,19 +9,19 @@
     {
       "id": "1746111504858",
       "username": "Alice",
-      "password": "1234",
+      "password": "ASDasd!@#123",
       "role": "leader"
     },
     {
       "id": "1746115181214",
       "username": "Montana",
-      "password": "qwert",
+      "password": "Qwerty!1",
       "role": "user"
     },
     {
       "id": "1746115312675",
       "username": "IvanTL",
-      "password": "IvanTL",
+      "password": "Test123!",
       "role": "leader"
     },
     {
@@ -43,13 +43,13 @@
       "role": "user"
     },
     {
-      "id": 1746295581602,
+      "id": "1746295581602",
       "username": "TestUser_3",
       "password": "!234Qwer",
       "role": "user"
     },
     {
-      "id": 1746295096553,
+      "id": "1746295096553",
       "username": "IvanTL",
       "password": "IvanTL1!",
       "role": "leader"

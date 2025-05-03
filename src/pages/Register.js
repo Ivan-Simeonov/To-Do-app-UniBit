@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -8,8 +6,6 @@ function Register() {
     password: '',
     role: 'user',
   });
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -21,9 +17,8 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Password strength validation
+    // ✅ Password strength check
     const passwordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-
     if (!passwordValid.test(formData.password)) {
       alert(
         'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.'
@@ -31,12 +26,24 @@ function Register() {
       return;
     }
 
-    const newUser = {
-      ...formData,
-      id: Date.now(),
-    };
-
     try {
+      // ✅ Check if username already exists
+      const checkRes = await fetch(
+        `http://localhost:5001/users?username=${formData.username}`
+      );
+      const existingUsers = await checkRes.json();
+
+      if (existingUsers.length > 0) {
+        alert('Username already exists. Please choose another.');
+        return;
+      }
+
+      // ✅ Create new user
+      const newUser = {
+        ...formData,
+        id: Date.now(),
+      };
+
       const res = await fetch('http://localhost:5001/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -46,13 +53,12 @@ function Register() {
       if (res.ok) {
         alert('User registered successfully!');
         setFormData({ username: '', password: '', role: 'user' });
-        navigate('/');
       } else {
         alert('Registration failed.');
       }
     } catch (err) {
       console.error(err);
-      alert('Error registering user.');
+      alert('Error during registration.');
     }
   };
 
@@ -78,11 +84,7 @@ function Register() {
           required
         />
         <br />
-        <select
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-        >
+        <select name="role" value={formData.role} onChange={handleChange}>
           <option value="user">User</option>
           <option value="leader">Team Leader</option>
         </select>

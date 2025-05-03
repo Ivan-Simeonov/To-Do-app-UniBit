@@ -10,21 +10,37 @@ function Navbar() {
   };
 
   return (
-    <nav style={{ padding: '10px', borderBottom: '1px solid #ccc' }}>
-      {user ? (
-        <>
-          <Link to="/dashboard" style={{ marginRight: '15px' }}>Dashboard</Link>
-          {user.role === 'leader' && (
-            <Link to="/admin" style={{ marginRight: '15px' }}>Admin View</Link>
-          )}
-          <button onClick={handleLogout}>Logout</button>
-        </>
-      ) : (
-        <>
-          <Link to="/" style={{ marginRight: '15px' }}>Login</Link>
-          <Link to="/register">Register</Link>
-        </>
-      )}
+    <nav>
+      <ul style={{ listStyle: 'none', display: 'flex', gap: '20px' }}>
+        {!user && (
+          <>
+            <li>
+              <Link to="/">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+          </>
+        )}
+        {user && (
+          <>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            {user.role === 'leader' && (
+              <li>
+                <Link to="/admin">Admin View</Link>
+              </li>
+            )}
+            <li>
+              <Link to="/change-password">Change Password</Link>
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
+            </li>
+          </>
+        )}
+      </ul>
     </nav>
   );
 }

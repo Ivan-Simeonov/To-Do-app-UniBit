@@ -21,11 +21,13 @@ function Login() {
       if (data.length > 0) {
         const user = data[0];
 
-        // Password strength check
+        // ✅ Check password strength
         const passwordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
         if (!passwordValid.test(user.password)) {
-          alert('Your password is outdated. Please register again with a stronger password.');
-          navigate('/register');
+          alert('Your password is outdated. Please update it.');
+          // ✅ Store credentials temporarily to help ChangePassword page (optional enhancement)
+          localStorage.setItem('pendingUser', JSON.stringify(user));
+          navigate('/change-password');
           return;
         }
 
