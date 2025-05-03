@@ -37,22 +37,23 @@
       "role": "user"
     },
     {
-      "id": "1746293662141",
-      "username": "Ivanov",
-      "password": "Test123!",
-      "role": "user"
-    },
-    {
-      "id": 1746293915769,
+      "id": "1746293915769",
       "username": "UserTest_2",
       "password": "!234Qwer",
       "role": "user"
     },
     {
+<<<<<<< HEAD
       "id": 1746295581602,
       "username": "TestUser_3",
       "password": "!234Qwer",
       "role": "user"
+=======
+      "id": 1746295096553,
+      "username": "IvanTL",
+      "password": "IvanTL1!",
+      "role": "leader"
+>>>>>>> fd881650d2283387224e17e7c6d92b95377f28c9
     }
   ],
   "tasks": [
@@ -86,7 +87,7 @@
       "completed": false
     },
     {
-      "id": 1746294523186,
+      "id": "1746294523186",
       "title": "Modern Task",
       "reminder": "2025-05-09T17:30",
       "type": "team",
