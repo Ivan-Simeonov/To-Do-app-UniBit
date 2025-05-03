@@ -23,6 +23,18 @@
       "username": "IvanTL",
       "password": "IvanTL",
       "role": "leader"
+    },
+    {
+      "id": 1746293210945,
+      "username": "NewPass",
+      "password": "1qaz!QAZ",
+      "role": "user"
+    },
+    {
+      "id": 1746293344888,
+      "username": "Ivanov",
+      "password": "Test123!",
+      "role": "user"
     }
   ],
   "tasks": [

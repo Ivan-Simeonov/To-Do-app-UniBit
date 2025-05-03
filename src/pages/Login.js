@@ -13,12 +13,23 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:5001/users?username=${credentials.username}&password=${credentials.password}`);
+      const res = await fetch(
+        `http://localhost:5001/users?username=${credentials.username}&password=${credentials.password}`
+      );
       const data = await res.json();
 
       if (data.length > 0) {
-        // User found
-        localStorage.setItem('user', JSON.stringify(data[0]));
+        const user = data[0];
+
+        // Password strength check
+        const passwordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        if (!passwordValid.test(user.password)) {
+          alert('Your password is outdated. Please register again with a stronger password.');
+          navigate('/register');
+          return;
+        }
+
+        localStorage.setItem('user', JSON.stringify(user));
         alert('Login successful!');
         navigate('/dashboard');
       } else {
@@ -34,7 +45,7 @@ function Login() {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <input 
+        <input
           type="text"
           name="username"
           placeholder="Username"
@@ -43,7 +54,7 @@ function Login() {
           required
         />
         <br />
-        <input 
+        <input
           type="password"
           name="password"
           placeholder="Password"
