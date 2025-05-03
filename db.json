@@ -37,16 +37,16 @@
       "role": "user"
     },
     {
-      "id": "1746293662141",
-      "username": "Ivanov",
-      "password": "Test123!",
-      "role": "user"
-    },
-    {
-      "id": 1746293915769,
+      "id": "1746293915769",
       "username": "UserTest_2",
       "password": "!234Qwer",
       "role": "user"
+    },
+    {
+      "id": 1746295096553,
+      "username": "IvanTL",
+      "password": "IvanTL1!",
+      "role": "leader"
     }
   ],
   "tasks": [
@@ -72,19 +72,15 @@
       "completed": false
     },
     {
-      "id": 1746293321676,
-      "title": "make commit",
-      "reminder": "2025-05-03T22:30",
-      "userId": "1746115181214",
       "id": "1746294061082",
       "title": "TASK 1",
       "reminder": "2025-05-17T17:30",
-      "type": "team",
       "userId": "1746293344888",
+      "type": "team",
       "completed": false
     },
     {
-      "id": 1746294523186,
+      "id": "1746294523186",
       "title": "Modern Task",
       "reminder": "2025-05-09T17:30",
       "type": "team",
