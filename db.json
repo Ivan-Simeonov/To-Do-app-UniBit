@@ -3,7 +3,7 @@
     {
       "id": "1234567890",
       "username": "Ivanov",
-      "password": "test123",
+      "password": "Test123!",
       "role": "user"
     },
     {
@@ -43,17 +43,16 @@
       "role": "user"
     },
     {
-<<<<<<< HEAD
       "id": 1746295581602,
       "username": "TestUser_3",
       "password": "!234Qwer",
       "role": "user"
-=======
+    },
+    {
       "id": 1746295096553,
       "username": "IvanTL",
       "password": "IvanTL1!",
       "role": "leader"
->>>>>>> fd881650d2283387224e17e7c6d92b95377f28c9
     }
   ],
   "tasks": [
