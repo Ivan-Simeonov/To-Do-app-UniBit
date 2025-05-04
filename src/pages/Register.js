@@ -17,7 +17,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ Password strength check
+    //Password strength check
     const passwordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
     if (!passwordValid.test(formData.password)) {
       alert(
@@ -27,7 +27,7 @@ function Register() {
     }
 
     try {
-      // ✅ Check if username already exists
+      //Check if username already exists
       const checkRes = await fetch(
         `http://localhost:5001/users?username=${formData.username}`
       );
@@ -38,7 +38,7 @@ function Register() {
         return;
       }
 
-      // ✅ Create new user
+      //Create new user
       const newUser = {
         ...formData,
         id: Date.now(),
